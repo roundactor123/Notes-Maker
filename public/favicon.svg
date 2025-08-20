@@ -1,0 +1,23 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background shape -->
+  <rect width="32" height="32" rx="6" fill="#FF6B6B" />
+  
+  <!-- Notebook shape -->
+  <rect x="6" y="5" width="20" height="22" rx="2" fill="#FFFFFF" />
+  
+  <!-- Spiral binding -->
+  <rect x="4" y="7" width="2" height="2" rx="1" fill="#333333" />
+  <rect x="4" y="11" width="2" height="2" rx="1" fill="#333333" />
+  <rect x="4" y="15" width="2" height="2" rx="1" fill="#333333" />
+  <rect x="4" y="19" width="2" height="2" rx="1" fill="#333333" />
+  <rect x="4" y="23" width="2" height="2" rx="1" fill="#333333" />
+  
+  <!-- Notebook lines -->
+  <line x1="10" y1="11" x2="22" y2="11" stroke="#AAAAAA" stroke-width="1" />
+  <line x1="10" y1="15" x2="22" y2="15" stroke="#AAAAAA" stroke-width="1" />
+  <line x1="10" y1="19" x2="22" y2="19" stroke="#AAAAAA" stroke-width="1" />
+  
+  <!-- Pen/Pencil -->
+  <rect x="20" y="8" width="8" height="1.5" rx="0.75" transform="rotate(45 20 8)" fill="#4ECDC4" />
+  <polygon points="17,11 18,10 20,12 19,13" fill="#FFD166" />
+</svg>

@@ -1,0 +1,30 @@
+# https://www.robotstxt.org/robotstxt.html
+# Noted - Drawing Application
+
+# Allow all robots complete access by default
+User-agent: *
+Allow: /
+
+# Prevent caching of API endpoints if they exist
+User-agent: *
+Disallow: /api/
+
+# Prevent indexing of any temporary or development routes
+User-agent: *
+Disallow: /tmp/
+Disallow: /temp/
+Disallow: /dev/
+Disallow: /debug/
+
+# Allow crawling of static assets
+Allow: /static/
+Allow: /images/
+Allow: /favicon.svg
+Allow: /logo192.svg
+Allow: /logo512.svg
+
+# Add Sitemap once deployed (uncomment and replace with your domain)
+# Sitemap: https://your-domain.com/sitemap.xml
+
+# Crawl-delay for all bots
+Crawl-delay: 1

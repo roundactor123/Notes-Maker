@@ -1,0 +1,338 @@
+/* Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background-color: #0F111A; /* Cosmic Black - base background */
+}
+
+/* Header */
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  background-color: rgba(255, 107, 107, 0.1);
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+  margin-right: 1rem;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.app-header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #FF6B6B;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  letter-spacing: 1px;
+}
+
+/* Notes Container */
+.notes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Note Card */
+.note-card {
+  position: relative;
+  background-color: #1A1D29; /* Midnight Ink - note background variant */
+  border-radius: 1rem;
+  padding: 1.5rem;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.note-card:hover {
+  transform: scale(0.98);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.note-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  word-break: break-word;
+}
+
+.note-content {
+  font-size: 1rem;
+  flex-grow: 1;
+  word-break: break-word;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+
+.note-drawing-preview {
+  margin-top: 0.5rem;
+  text-align: center;
+  max-height: 100px;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.note-drawing-preview img {
+  max-width: 100%;
+  max-height: 100px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.note-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+  opacity: 0;
+  transition: opacity 150ms ease;
+}
+
+.note-card:hover .note-actions {
+  opacity: 1;
+}
+
+.action-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: background-color 150ms ease, transform 150ms ease;
+}
+
+.action-button:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+  transform: scale(1.1);
+}
+
+/* New Note Button */
+.new-note-button {
+  background-color: #1A1D29;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 150ms ease, background-color 150ms ease;
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+}
+
+.new-note-button:hover {
+  transform: scale(0.98);
+  background-color: #2A2D39;
+}
+
+.new-note-button span {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.new-note-button p {
+  font-size: 1rem;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+/* Note Editor */
+.note-editor {
+  background-color: #1A1D29;
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 90%;
+  max-width: 700px;
+  max-height: 90vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.editor-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  background: none;
+  border: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  color: inherit;
+}
+
+.editor-content {
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  background: none;
+  border: none;
+  resize: vertical;
+  min-height: 200px;
+  color: inherit;
+  flex-grow: 1;
+}
+
+.editor-title:focus,
+.editor-content:focus {
+  outline: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.editor-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.color-picker {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.color-option {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 150ms ease;
+  border: 2px solid transparent;
+}
+
+.color-option:hover {
+  transform: scale(1.2);
+}
+
+.color-option.selected {
+  border: 2px solid white;
+}
+
+/* Drawing Editor */
+.drawing-editor {
+  background-color: #1A1D29;
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.drawing-editor h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.drawing-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.drawing-preview {
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.drawing-preview img {
+  max-width: 100%;
+  max-height: 200px;
+  border-radius: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .notes-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .note-editor,
+  .drawing-editor {
+    width: 95%;
+    padding: 1.5rem;
+  }
+  
+  .editor-title {
+    font-size: 1.5rem;
+  }
+  
+  .editor-content {
+    font-size: 1rem;
+    min-height: 150px;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion) {
+  .note-card,
+  .new-note-button,
+  .action-button,
+  .color-option {
+    transition: none;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .note-card {
+    border: 2px solid white;
+  }
+  
+  .action-button {
+    background-color: black;
+    color: white;
+  }
+}
