@@ -21,7 +21,13 @@
 
 ## 🎨 Preview
 
-![Noted UI Screenshot](/public/ss.png) <!-- Replace with actual screenshot path -->
+<img width="1919" height="974" alt="image" src="https://github.com/user-attachments/assets/9f64cd9a-0e21-409a-a399-77248e66fadd" />
+
+<img width="1919" height="978" alt="image" src="https://github.com/user-attachments/assets/c1d38457-24d1-4bf4-af17-0e47664ec24c" />
+
+<img width="983" height="829" alt="image" src="https://github.com/user-attachments/assets/144b24f2-33b1-461b-a7c6-76efbdabcd51" />
+
+<img width="1919" height="968" alt="image" src="https://github.com/user-attachments/assets/3cbcfa93-43ee-4252-b281-e4255342d9b1" />
 
 ---
 
@@ -73,7 +79,7 @@ Feel free to fork this project, create a pull request, or open an issue!
 
 - 🎨 Drawing Engine inspired by [Excalidraw](https://excalidraw.com)
 - ✍️ Icon design + fonts from [Google Fonts](https://fonts.google.com) & [FontAwesome](https://fontawesome.com)
-- 💡 Original UI and UX by **[@ujandey](https://github.com/ujandey)**
+- 💡 Original UI and UX by **[@Prabhat](https://github.com/roundactor123)**
 
 ---
 
